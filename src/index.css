@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "comical";
+    src: url("/src/fonts/comical-cartoon/Comical.ttf") format("ttf");
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "jumbojim";
+    src: url("/src/fonts/retro/JUMBOJIM/JUMBOJIM.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  .comical{
+    font-family: "comical", sans-serif;
+  }
+
+  .jumbojim{
+    font-family: "jumbojim", sans-serif;    
+  }
