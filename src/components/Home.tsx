@@ -14,7 +14,7 @@ export default function Home() {
           <motion.img
             src="/assets/Grumpy Old man coin.png"
             alt="Grumpy Grandpa Coin"
-            className="h-20 lg:h-32 xl:h-52 2xl:h-56 mb-4 md:mb-8"
+            className="h-20 lg:h-32 xl:h-52 2xl:h-56 mb-4 md:mb-8 2xl:mb-20"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{
@@ -26,7 +26,7 @@ export default function Home() {
           />
 
           <motion.p
-            className="hidden md:block max-w-4xl lg:max-w-2xl text-lg font-bold text-[#EEE9E8] uppercase"
+            className="hidden md:block max-w-4xl lg:max-w-2xl 2xl:max-w-4xl text-lg font-bold text-[#EEE9E8] uppercase"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}

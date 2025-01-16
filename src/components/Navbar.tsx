@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -22,19 +22,19 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
-      className="bg-gray-950 bg-opacity-60 text-white px-6 py-4 fixed top-0 w-full z-50"
+      className="bg-gray-950 bg-opacity-60 text-white px-3 xl:px-6 py-4 fixed top-0 w-full z-50"
     >
       <div className="container mx-auto flex justify-between items-center">
         <motion.div 
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="text-2xl font-bold"
+           
         >
-          <img src="/assets/logo.png" alt="Grumpy Logo" className="" />
+          <img src="/assets/logo.png" alt="Grumpy Logo" className="w-36 2xl:w-60" />
         </motion.div>
 
         {/* Desktop */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 text-lg md:text-xs xl:text-base 2xl:text-lg uppercase">
           {navLinks.map((link, index) => (
             <motion.li 
               key={index}
@@ -111,7 +111,7 @@ const AnimatedButton = () => {
       <motion.div
         className="absolute inset-0 bg-black rounded-full"
         initial={{ 
-          opacity: 0.3, 
+          opacity: 0.9, 
           height: '100%', 
           width: '100%', 
           top: '10%' 
@@ -130,7 +130,7 @@ const AnimatedButton = () => {
       <motion.button
         initial={{ y: 0 }}
         whileHover={{ y: -5 }}
-        className="relative bg-[#C62D24] hover:bg-red-700 text-white text-xs xl:text-base py-2 px-4 rounded-full"
+        className="relative bg-[#C62D24] hover:bg-red-700 text-white text-xs xl:text-base py-2 px-2 xl:px-4 rounded-3xl"
       >
         Pre-sale Coming Soon
       </motion.button>

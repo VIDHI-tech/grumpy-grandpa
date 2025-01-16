@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "comical";
-    src: url("/src/fonts/comical-cartoon/Comical.ttf") format("ttf");
+    src: url("/src/fonts/Comical.ttf") format("truetype");
     font-weight: 900;
     font-style: normal;
   }
