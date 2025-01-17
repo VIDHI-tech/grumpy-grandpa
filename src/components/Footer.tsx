@@ -5,7 +5,8 @@ import { useInView } from 'react-intersection-observer'
 import { RiInstagramFill } from "react-icons/ri"
 import { FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa"
 import { useEffect, useRef } from 'react'
-import { Howl } from 'howler'
+// import { Howl } from 'hawler'
+import {Howl} from 'howler';
 
 const Footer = () => {
   const [ref, inView] = useInView({

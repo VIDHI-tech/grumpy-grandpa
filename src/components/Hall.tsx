@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { PiArrowBendDownRightLight } from "react-icons/pi";
 import SwitchButton from "./SwitchButton";
-import tvButton from "../../public/assets/tv button.png";
 import tvImage from "../../public/assets/TVbase.png";
 import newImage from "../../public/assets/tv.gif";
 
@@ -15,10 +14,10 @@ const HallOfFame = () => {
 
   const handleButtonClick = () => {
     setButtonRotation((prevRotation) => prevRotation + 90);
-    setIsAlternateImage((prev) => !prev); // Toggle image
+    setIsAlternateImage((prev) => !prev); 
   };
 
-  const handleToggle = (isChecked) => {
+  const handleToggle=  (isChecked: boolean) => {
     setIsGradientVisible(isChecked);
   };
 

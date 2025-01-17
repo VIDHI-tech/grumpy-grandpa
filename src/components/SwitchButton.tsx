@@ -1,8 +1,7 @@
-'use client'
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Howl } from 'howler'
+import { Howl } from 'howler';
 
 interface SwitchButtonProps {
   onToggle: (isChecked: boolean) => void
@@ -16,7 +15,7 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle }) => {
   useEffect(() => {
     // Initialize the Howl instance
     const switchSound = new Howl({
-      src: ['/assets/ButtonOn.wav'], // Make sure this file exists in your public/sounds directory
+      src: ['/assets/ButtonOn.wav'],
       volume: 0.5,
     })
     setSound(switchSound)
@@ -181,7 +180,7 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle }) => {
           transition={{ duration: 0.3 }}
         />
       </motion.div>
-      <style jsx>{`
+      <style  >{`
         .light {
           animation: light-off 1s;
         }

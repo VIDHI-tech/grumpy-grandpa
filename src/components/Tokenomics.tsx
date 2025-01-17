@@ -67,8 +67,7 @@ export default function Tokenomics() {
             label={({
               cx,
               cy,
-              midAngle,
-              innerRadius,
+              midAngle, 
               outerRadius,
               allocation,
               percentage,
