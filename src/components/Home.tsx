@@ -53,7 +53,7 @@ export default function Home() {
 
         <div className="container relative z-10 flex flex-col items-center justify-center h-full text-center text-white jumbojim -top-32 md:-top-44 lg:top-10 xl:top-20 2xl:top-0  2xl:left-24">
           <motion.img
-            src="/public/assets/Grumpy Old man coin.png"
+            src="/assets/Grumpy Old man coin.png"
             alt="Grumpy Grandpa Coin"
             className="h-20 lg:h-32 xl:h-52 2xl:h-56 mb-4 md:mb-8 2xl:mb-20"
             transition={{

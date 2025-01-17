@@ -16,13 +16,13 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle }) => {
   useEffect(() => {
     // Initialize the Howl instance
     const switchSound = new Howl({
-      src: ['/public/assets/ButtonOn.wav'], // Make sure this file exists in your public/sounds directory
+      src: ['/assets/ButtonOn.wav'], // Make sure this file exists in your public/sounds directory
       volume: 0.5,
     })
     setSound(switchSound)
 
     const blackSound = new Howl({
-      src: ['/public/assets/Night.wav'], // Make sure this file exists in your public/assets directory
+      src: ['/assets/Night.wav'], // Make sure this file exists in your public/assets directory
       volume: 0.5,
     })
     setBlackSound(blackSound)
