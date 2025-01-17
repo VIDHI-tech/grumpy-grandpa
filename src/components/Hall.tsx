@@ -8,12 +8,10 @@ import newImage from "../../public/assets/tv.gif";
 const HallOfFame = () => {
   const [isGradientVisible, setIsGradientVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [buttonRotation, setButtonRotation] = useState(0);
   const [isAlternateImage, setIsAlternateImage] = useState(false); // State for image toggle
 
 
   const handleButtonClick = () => {
-    setButtonRotation((prevRotation) => prevRotation + 90);
     setIsAlternateImage((prev) => !prev); 
   };
 
@@ -22,7 +20,7 @@ const HallOfFame = () => {
   };
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove =  (e: MouseEvent)  => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
