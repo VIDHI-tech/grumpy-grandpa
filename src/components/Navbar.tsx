@@ -22,7 +22,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
-      className="bg-gray-950 bg-opacity-60 text-white px-3 xl:px-6 py-4 fixed top-0 w-full z-50"
+      className="bg-gray-950 bg-opacity-90 text-white px-3 xl:px-6 py-4 fixed top-0 w-full z-50"
     >
       <div className="container mx-auto flex justify-between items-center">
         <motion.div 
@@ -30,7 +30,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
            
         >
-          <img src="/assets/logo.png" alt="Grumpy Logo" className="w-36 2xl:w-60" />
+          <img src="/assets/logo.png" alt="Grumpy Logo" className="w-36 2xl:w-52" />
         </motion.div>
 
         {/* Desktop */}

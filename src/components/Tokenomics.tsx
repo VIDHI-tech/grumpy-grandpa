@@ -36,8 +36,18 @@ export default function Tokenomics() {
   ];
 
   return (
-    <section className="relative h-screen bg-cover bg-center bg-[url('/assets/tokenomics.gif')] items-center">
-      <div className="absolute inset-0 bg-black opacity-75"></div>
+    <section className="relative h-screen bg-cover bg-center  items-center">
+              <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/tokenomics.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      {/* <div className="absolute inset-0 bg-black opacity-75"></div> */}
       <h1 className="text-lg md:text-2xl xl:text-4xl font-bold text-[#FF1D0F] comical text-center w-full z-10 absolute py-10 xl:py-20" style={{textShadow: "7px 7px 3px rgba(0, 0, 0, 0.9)"}}>
         TOKENOMICS
       </h1>
@@ -136,7 +146,7 @@ export default function Tokenomics() {
           </Pie>
         </PieChart>
         </span>
-        <p className="text-white text-center lg:text-end z-10 jumbojim text-sm lg:text-2xl max-w-2xl">
+        <p className="text-white text-center lg:text-end z-10 jumbojim text-sm lg:text-lg xl:text-2xl pr-5 max-w-2xl">
           Grumpy Old Man Coin (GOMC) isn’t just another meme coin—it’s a
           rebellion, a complaint, and a force of sheer stubbornness. GOMC is
           built to shake up the meme coin world, mixing dry humor with sharp

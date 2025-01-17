@@ -1,5 +1,8 @@
-import { useState } from "react"
+'use client'
+
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { Howl } from 'howler'
 
 interface SwitchButtonProps {
   onToggle: (isChecked: boolean) => void
@@ -7,16 +10,56 @@ interface SwitchButtonProps {
 
 const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle }) => {
   const [isChecked, setIsChecked] = useState(false)
+  const [sound, setSound] = useState<Howl | null>(null)
+  const [blackSound, setBlackSound] = useState<Howl | null>(null)
+
+  useEffect(() => {
+    // Initialize the Howl instance
+    const switchSound = new Howl({
+      src: ['/public/assets/ButtonOn.wav'], // Make sure this file exists in your public/sounds directory
+      volume: 0.5,
+    })
+    setSound(switchSound)
+
+    const blackSound = new Howl({
+      src: ['/public/assets/Night.wav'], // Make sure this file exists in your public/assets directory
+      volume: 0.5,
+    })
+    setBlackSound(blackSound)
+
+    // Cleanup function
+    return () => {
+      if (sound) {
+        sound.unload()
+      }
+      if (blackSound) {
+        blackSound.unload()
+      }
+    }
+  }, [])
 
   const toggleSwitch = () => {
     const newState = !isChecked
     setIsChecked(newState)
     onToggle(newState)
+
+    // Play the button sound
+    if (sound) {
+      sound.play()
+    }
+
+    if (blackSound) {
+      if (newState) {
+        blackSound.play()
+      } else {
+        blackSound.stop()
+      }
+    }
   }
 
   return (
     <motion.label
-      className="switch relative flex items-center justify-center w-[150px] h-[195px] bg-black rounded-[5px] p-5"
+      className="switch relative flex items-center justify-center w-[100px] h-[130px] 2xl:w-[130px] 2xl:h-[170px] bg-black rounded-[5px] p-5"
       style={{
         boxShadow: `
           0 0 10px 2px rgba(0, 0, 0, 0.2),
@@ -27,8 +70,6 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle }) => {
         `,
         perspective: '700px',
       }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
     >
       <input
         type="checkbox"

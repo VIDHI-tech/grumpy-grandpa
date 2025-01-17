@@ -28,9 +28,18 @@ const Cranky = () => {
   return (
     <>
       <section
-        style={{ backgroundImage: "url('/assets/truck.png')" }}
-        className="bg-cover bg-c h-screen relative text-white"
+        className="bg-cover bg-center h-screen relative text-white"
       >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-fill"
+        >
+          <source src="/assets/cranky.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="uppercase absolute w-full text-white">
           <h1 className="text-lg md:text-2xl xl:text-4xl comical lg:text-start pt-20 lg:p-20 text-center">
             Cranky Credits

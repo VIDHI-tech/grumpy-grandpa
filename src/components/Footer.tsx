@@ -1,15 +1,38 @@
+'use client'
 
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { RiInstagramFill } from "react-icons/ri"
 import { FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa"
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { Howl } from 'howler'
 
 const Footer = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.5,
   })
+
+  const audioRef = useRef<Howl | null>(null)
+
+  useEffect(() => {
+    audioRef.current = new Howl({
+      src: ['/sounds/footer.mp3'],
+      volume: 0.9,
+    })
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.unload()
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (inView && audioRef.current) {
+      audioRef.current.play()
+    }
+  }, [inView])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,7 +69,6 @@ const Footer = () => {
 
   return (
     <>
-      <BlackScreenOverlay />
       <footer
         ref={ref}
         style={{ backgroundImage: "url('/assets/footerbg.png')" }}
@@ -58,6 +80,7 @@ const Footer = () => {
           animate={inView ? "visible" : "hidden"}
           className="container mx-auto flex flex-col items-center justify-center"
         >
+          <BlackScreenOverlay />
           <motion.h1
             variants={itemVariants}
             className="uppercase comical text-center text-xl lg:text-4xl 2xl:text-5xl pt-36 flex flex-col gap-y-7 xl:gap-y-16"
@@ -112,10 +135,6 @@ const Footer = () => {
 
 export default Footer
 
-
-
-
-
 export const BlackScreenOverlay = () => {
   const controls = useAnimation()
   const [ref, inView] = useInView({
@@ -141,5 +160,4 @@ export const BlackScreenOverlay = () => {
     />
   )
 }
-
 
