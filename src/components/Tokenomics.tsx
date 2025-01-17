@@ -88,35 +88,36 @@ export default function Tokenomics() {
                 );
               }}
             >
-              <Label
-                content={({ viewBox }) => {
-                  const { cx = 0, cy = 0 } = viewBox || {};
-                  return (
-                    <text
-                      x={cx}
-                      y={cy}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="fill-white"
-                    >
-                      <tspan
-                        x={cx}
-                        y={cy - 10}
-                        className="text-4xl font-bold"
-                      >
-                        500 M
-                      </tspan>
-                      <tspan
-                        x={cx}
-                        y={cy + 20}
-                        className="text-xl"
-                      >
-                        Total Supply
-                      </tspan>
-                    </text>
-                  );
-                }}
-              />
+<Label
+  content={({ viewBox }) => {
+    const { cx = 0, cy = 0 } = viewBox as { cx: number; cy: number };
+    return (
+      <text
+        x={cx}
+        y={cy}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="fill-white"
+      >
+        <tspan
+          x={cx}
+          y={cy - 10}
+          className="text-4xl font-bold"
+        >
+          500 M
+        </tspan>
+        <tspan
+          x={cx}
+          y={cy + 20}
+          className="text-xl"
+        >
+          Total Supply
+        </tspan>
+      </text>
+    );
+  }}
+/>
+
             </Pie>
           </PieChart>
         </span>
