@@ -3,22 +3,36 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "comical";
-    src: url("/src/fonts/Comical.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "jumbojim";
-    src: url("/src/fonts/retro/JUMBOJIM/JUMBOJIM.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-  }
+  font-family: "comical";
+  src: url("/src/fonts/Comical.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "jumbojim";
+  src: url("/src/fonts/retro/JUMBOJIM/JUMBOJIM.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
 
-  .comical{
-    font-family: "comical", sans-serif;
-  }
+.comical {
+  font-family: "comical", sans-serif;
+}
 
-  .jumbojim{
-    font-family: "jumbojim", sans-serif;    
-  }
+.jumbojim {
+  font-family: "jumbojim", sans-serif;
+}
+.comic-text-shadow {
+  @apply [text-shadow:_3px_2px_0px_#000000];
+}
+.comic-heading-text {
+  @apply tracking-wide comical font-bold comic-text-shadow text-lg md:text-2xl 2xl:text-4xl;
+}
+
+.comic-subheading-text {
+  @apply jumbojim font-bold comic-text-shadow text-lg md:text-2xl xl:text-4xl;
+}
+
+.comic-paragraph-text {
+  @apply jumbojim text-xs md:text-lg xl:text-xl;
+}
